@@ -1,4 +1,11 @@
 import { Container, Row, Col, Nav, Navbar } from "react-bootstrap";
+import './style.css'
+import logo from './Spotify_Logo.png'
+import shuffle from './playerbuttons/Shuffle.png'
+import previous from './playerbuttons/Previous.png'
+import play from './playerbuttons/Play.png'
+import next from './playerbuttons/Next.png'
+import repeat from './playerbuttons/Repeat.png'
 
 const Homepage = () => {
   return (
@@ -7,13 +14,13 @@ const Homepage = () => {
       <Row>
         <Col md={2}>
           <Nav
-            class="navbar navbar-expand-md navbar-white bg-navbar fixed-left justify-content-between"
+            className="navbar navbar-expand-md navbar-white bg-navbar fixed-left justify-content-between"
             id="sidebar"
           >
-            <div class="nav-container">
+            <div className="nav-container">
               <Navbar.Brand href="index.html">
                 <img
-                  src="logo/Spotify_Logo.png"
+                  src={logo}
                   alt="Spotify_Logo"
                   width="131"
                   height="40"
@@ -27,38 +34,38 @@ const Homepage = () => {
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span class="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon"></span>
               </Navbar.Toggle>
-              <Navbar.Collapse id="navbarNavAltMarkup">
+              <Navbar.Collapse class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <Nav>
                   <ul>
                     <li>
-                      <Nav.Link href="index.html">
-                        <i class="fas fa-home fa-lg"></i>&nbsp; Home
-                      </Nav.Link>
+                      <a href="index.html">
+                        <i className="fas fa-home fa-lg"></i>&nbsp; Home
+                      </a>
                     </li>
                     <li>
-                      <Nav.Link href="#">
-                        <i class="fas fa-book-open fa-lg"></i> &nbsp; Your
+                      <a href="#">
+                        <i className="fas fa-book-open fa-lg"></i> &nbsp; Your
                         Library{""}
-                      </Nav.Link>
+                      </a>
                     </li>
                     <li>
-                      <div class="input-group mt-3">
+                      <div className="input-group mt-3">
                         <input
                           type="text"
-                          class="form-control mb-2"
+                          className="form-control mb-2"
                           id="searchField"
                           placeholder="Search"
                           aria-label="Search"
                           aria-describedby="basic-addon2"
                         />
                         <div
-                          class="input-group-append"
-                          style="margin-bottom: 4%"
+                          className="input-group-append"
+                          style={{marginBottom: '4%'}}
                         >
                           <button
-                            class="btn btn-outline-secondary btn-sm"
+                            className="btn btn-outline-secondary btn-sm"
                             type="button"
                             id="button-addon1"
                             onClick="search()"
@@ -73,11 +80,11 @@ const Homepage = () => {
               </Navbar.Collapse>
             </div>
 
-            <div class="nav-btn">
-              <button class="btn signup-btn" type="button">
+            <div className="nav-btn">
+              <button className="btn signup-btn" type="button">
                 Sign Up
               </button>
-              <button class="btn login-btn" type="button">
+              <button className="btn login-btn" type="button">
                 Login
               </button>
               <Nav.Link href="#">Cookie Policy</Nav.Link> |
@@ -86,9 +93,9 @@ const Homepage = () => {
           </Nav>
         </Col>
 
-        <Col xs={12} md={9} class=" offset-md-3 mainPage">
+        <Col xs={12} md={9} class="offset-md-3 mainPage">
           <Row>
-            <Col xs={9} lg={11} class=" mainLinks d-none d-md-flex">
+            <Col xs={9} lg={11} class="mainLinks d-none d-md-flex">
               <a href="#">TRENDING</a>
               <a href="#">PODCAST</a>
               <a href="#">MOODS AND GENRES</a>
@@ -153,19 +160,19 @@ const Homepage = () => {
       >
         <Row>
           <a href="#">
-            <img src="playerbuttons/Shuffle.png" alt="shuffle" />
+            <img src={shuffle} alt="shuffle" />
           </a>
           <a href="#">
-            <img src="playerbuttons/Previous.png" alt="previous" />
+            <img src={previous} alt="previous" />
           </a>
           <a href="#">
-            <img src="playerbuttons/Play.png" alt="play" />
+            <img src={play} alt="play" />
           </a>
           <a href="#">
-            <img src="playerbuttons/Next.png" alt="next" />
+            <img src={next} alt="next" />
           </a>
           <a href="#">
-            <img src="playerbuttons/Repeat.png" alt="repeat" />
+            <img src={repeat} alt="repeat" />
           </a>
         </Row>
       </Col>
@@ -187,5 +194,7 @@ const Homepage = () => {
 </Row>
 </Container>
 </>
-  );
-};
+  )
+}
+
+export default Homepage
