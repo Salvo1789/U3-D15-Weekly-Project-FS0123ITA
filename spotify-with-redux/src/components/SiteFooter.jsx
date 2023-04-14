@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { useSelector } from 'react-redux'
 import { Col, Container, Row } from "react-bootstrap"
 import Shuffle from "./playerbuttons/Shuffle.png"
 import Previous from "./playerbuttons/Previous.png"
@@ -7,6 +8,7 @@ import Next from "./playerbuttons/Next.png"
 import Repeat from "./playerbuttons/Repeat.png"
 
 const SiteFooter = () => {
+  const playing = useSelector((state)  => state.isPlaying)
   return (
     <Container fluid className=" pt-1 bg-container" fixed="bottom">
       <Row>
