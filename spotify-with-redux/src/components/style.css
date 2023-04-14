@@ -22,12 +22,12 @@ body {
   z-index: 1200;
 }
 
-.navbar.fixed-left .navbar-collapse Nav a {
+.navbar.fixed-left .nav-container NavbarCollapse .navbar-nav NavLink {
   color: rgb(145, 145, 145) !important;
   transition: 0.3s;
 }
 
-.navbar.fixed-left .navbar-collapse Nav a:hover {
+.navbar.fixed-left .nav-containerNavbarCollapse .navbar-nav NavLink:hover {
   color: white !important;
 }
 
@@ -47,7 +47,7 @@ ul {
   text-align: center;
 }
 
-.nav-btn a {
+.nav-btn NavLink, .nav-btn button {
   color: rgb(145, 145, 145);
 }
 
@@ -121,19 +121,19 @@ ul {
 
 /*MAIN PAGE SECTION*/
 
-.mainLinks {
+.mainPage .mainLinks {
   margin-top: 1.5rem;
   justify-content: space-evenly;
 }
 
-.mainLinks a {
+.mainPage .mainLinks a {
   color: white;
   font-weight: 700;
   font-size: 12px;
   opacity: 0.3;
 }
 
-.mainLinks a:hover {
+.mainPage .mainLinks a:hover {
   text-decoration: none;
   opacity: 1;
   transition: 0.3s;

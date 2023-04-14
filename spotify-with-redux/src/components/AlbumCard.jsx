@@ -1,27 +1,50 @@
-const AlbumCard = (songInfo) => {
+import { useEffect, useState } from "react";
+
+const AlbumCard = () => {
+  const [albums, setAlbums] = useState([]);
+  const fetchAlbums = async () => {
+    
+    try {
+      const response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/deezer/album/75621062"
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setAlbums(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchAlbums();
+  }, [])
+
     return (
         <div class="col-sm-auto col-md-auto text-center mb-5">
             <a href="/album_page.html?id=${songInfo.album.id}">
               <img class="img-fluid" src={
-                songInfo.album.cover_medium // creating the album image anchor
+                albums.album.cover_medium // creating the album image anchor
               } alt="1" />
             </a>
             <p>
               <a href="#">
                 Track: "{
-                  songInfo.title.length < 16
-                    ? `${songInfo.title}`
-                    : `${songInfo.title.substring(0, 16)}...` // setting the track title, if it's longer than 16 chars cuts the rest
+                  albums.title.length < 16
+                    ? `${albums.title}`
+                    : `${albums.title.substring(0, 16)}...` // setting the track title, if it's longer than 16 chars cuts the rest
                 }"
               </a><br/>
               <a href="/album_page.html?id=${songInfo.album.id}">
                 Album: "{
-                  songInfo.album.title.length < 16
-                    ? `${songInfo.album.title}`
-                    : `${songInfo.album.title.substring(0, 16)}...` // setting the track title, if it's longer than 16 chars cuts the rest
+                  albums.album.title.length < 16
+                    ? `${albums.album.title}`
+                    : `${albums.album.title.substring(0, 16)}...` // setting the track title, if it's longer than 16 chars cuts the rest
                 }"
               </a>
             </p>
           </div>
     )
 }
+
+export default AlbumCard

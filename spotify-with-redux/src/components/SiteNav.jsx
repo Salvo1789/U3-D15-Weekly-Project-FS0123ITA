@@ -1,9 +1,10 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { Col, Nav, NavLink, NavbarBrand } from "react-bootstrap";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
-import logo from "../logo/Spotify_Logo.png";
+import logo from "./Spotify_Logo.png";
 
-const MyNav = () => {
+const SiteNav = () => {
   return (
     <Col md={2}>
       <Nav
@@ -78,4 +79,4 @@ const MyNav = () => {
   );
 };
 
-export default MyNav;
+export default SiteNav;
