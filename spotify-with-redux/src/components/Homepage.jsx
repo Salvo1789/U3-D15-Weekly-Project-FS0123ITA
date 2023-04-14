@@ -17,7 +17,7 @@ const Homepage = () => {
 
         <Col xs={12} md={9} class="offset-md-3 mainPage">
           <Row>
-            <Col xs={9} lg={11} class="mainLinks d-none d-md-flex">
+            <Col xs={9} lg={11} className="mainLinks d-none d-md-flex">
               <a href="#">TRENDING</a>
               <a href="#">PODCAST</a>
               <a href="#">MOODS AND GENRES</a>
@@ -43,7 +43,7 @@ const Homepage = () => {
                   class="row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
                   id="rockSection"
                   >
-                    <AlbumCard songInfo="albums"/>
+                    
                  </Row>
               </div>
             </Col>
