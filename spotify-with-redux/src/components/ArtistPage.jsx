@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import AlbumCard from './AlbumCard'
 
-const ArtistMain = () => {
+const ArtistPage = () => {
   const ARTIST_URL = 'https://striveschool-api.herokuapp.com/api/deezer/artist/'
   const SEARCH_URL = 'https://striveschool-api.herokuapp.com/api/deezer/search?q='
 
