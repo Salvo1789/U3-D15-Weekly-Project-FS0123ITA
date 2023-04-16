@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux'
+import { Row, Col } from 'react'
 import AlbumCard from './AlbumCard'
 
 const GenresAlbums = ({title, trackStore, content}) => {
