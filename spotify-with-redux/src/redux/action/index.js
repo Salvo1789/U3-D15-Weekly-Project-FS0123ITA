@@ -15,7 +15,7 @@ export const addUserSearchAction = (query) => {
         try{
             let resp = await fetch(`${SEARCH_URL}${query}`)
             if (resp.ok){
-                let data = await resp.json()
+                let { data } = await resp.json()
                 dispatch({type: ADD_USER_SEARCH, payload: data})
             }else{
                 console.log('Something gone wrong')
@@ -31,8 +31,8 @@ export const addMainSearchAction = (query) => {
         try{
             let resp = await fetch(`${SEARCH_URL}${query}`)
             if (resp.ok){
-                let data = await resp.json()
-                dispatch({type: ADD_MAIN_SEARCH, payload: data})
+                let { data } = await resp.json()
+                dispatch({type: ADD_MAIN_SEARCH, id: query, payload: data})
             }else{
                 console.log('Something gone wrong')
             }

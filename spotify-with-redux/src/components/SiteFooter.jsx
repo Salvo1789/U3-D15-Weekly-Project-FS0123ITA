@@ -44,9 +44,9 @@ const SiteFooter = () => {
 
           <Row className="justify-content-center playBar py-3">
             <Col xs={8} md={6}>
-              <div class="progress">
+              <div className="progress">
                 <div
-                  class="progress-bar"
+                  className="progress-bar"
                   role="progressbar"
                   aria-valuenow="0"
                   aria-valuemin="0"

@@ -11,8 +11,9 @@ const AlbumCard = ({ track }) => {
   const isInFavourites = favourites.includes(track.id)
 
   return (
+    <>
     <div className="col text-center" id={track.id}>
-      <a href="/album_page.html?id=${track.album.id}">
+      <Link to={`/album_page.html?id=${track.album.id}`}>
         <img className="img-fluid" src={track.album.cover_medium} alt="1" />
         <button
           type="button"
@@ -56,7 +57,7 @@ const AlbumCard = ({ track }) => {
             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
           </svg>
         </button>
-      </a>
+      </Link>
       <p>
       <Link to={`/album/${track.album.id}`}>
           Album: "
@@ -70,6 +71,7 @@ const AlbumCard = ({ track }) => {
         </Link>
       </p>
     </div>
+    </>
   );
 };
 

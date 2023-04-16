@@ -14,7 +14,6 @@ const SiteNav = () => {
   const [query, setQuery] = useState('')
   const location = useLocation()
 
-  console.log(location)
   const search = (e) => {
     dispatch(addUserSearchAction(query));
   }
@@ -40,39 +39,39 @@ const SiteNav = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </NavbarToggle>
           <NavbarCollapse id="navbarNavAltMarkup">
-            <div class="navbar-nav">
+            <div className="navbar-nav">
               <ul>
                 <li>
-                  <NavLink href="index.html">
-                    <i class="fas fa-home fa-lg"></i>&nbsp; Home
+                  <NavLink to='/'>
+                    <i className="fas fa-home fa-lg"></i>&nbsp; Home
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink class="nav-item nav-link" href="#">
-                    <i class="fas fa-book-open fa-lg"></i>&nbsp; Your Library{" "}
+                  <NavLink className="nav-item nav-link" to='/'>
+                    <i className="fas fa-book-open fa-lg"></i>&nbsp; Your Library{" "}
                   </NavLink>
                 </li>
                 {!location.pathname.includes("album") && !location.pathname.includes("artist") && (
                 <li>
-                  <div class="input-group mt-3">
+                  <div className="input-group mt-3">
                     <input
                       type="text"
-                      class="form-control mb-2"
+                      className="form-control mb-2"
                       id="searchField"
                       placeholder="Search"
                       aria-label="Search"
                       aria-describedby="basic-addon2"
                       onChange={handleChange}
                     />
-                    <div class="input-group-append" className="mb-4">
+                    <div className="input-group-append mb-4">
                       <button
-                        class="btn btn-outline-secondary btn-sm"
+                        className="btn btn-outline-secondary btn-sm"
                         type="button"
                         id="button-addon1"
-                        onClick={search()}
+                        onClick={search}
                       >
                         GO
                       </button>
@@ -84,15 +83,15 @@ const SiteNav = () => {
             </div>
           </NavbarCollapse>
         </div>
-        <div class="nav-btn">
-          <button class="btn signup-btn" type="button">
+        <div className="nav-btn">
+          <button className="btn signup-btn" type="button">
             Sign Up
           </button>
-          <button class="btn login-btn" type="button">
+          <button className="btn login-btn" type="button">
             Login
           </button>
-          <NavLink href="#">Cookie Policy</NavLink> |
-          <NavLink href="#"> Privacy</NavLink>
+          <NavLink to='/'>Cookie Policy</NavLink> |
+          <NavLink to='/'> Privacy</NavLink>
         </div>
       </Nav>
     </Col>

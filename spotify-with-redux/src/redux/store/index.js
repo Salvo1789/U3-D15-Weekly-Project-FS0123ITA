@@ -9,7 +9,7 @@ const comboReducer = combineReducers({
     isPlaying: isPlayingReducer,
     favourites: favouritesReducer,
     userSearchResults: userSearchReducer,
-    mainSearchResultss: mainSearchReducer
+    mainSearchResults: mainSearchReducer
 })
 
 const store = configureStore({
